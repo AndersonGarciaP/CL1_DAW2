@@ -21,7 +21,7 @@
         <th scope="col">Código</th>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
-        <th scope="col">Especialidad</th>
+<!--        <th scope="col">Especialidad</th>-->
         <th scope="col">Procedencia</th>
         <th scope="col">Actualizar</th>
         <th scope="col">Eliminar</th>
@@ -32,14 +32,14 @@
         <td th:text="${alumno.idalumno}"></td>
         <td th:text="${alumno.nomalumno}"></td>
         <td th:text="${alumno.apealumno}"></td>
-        <td th:text="${alumno.especialidad.nomesp}"></td>
+<!--        <td th:text="${alumno.especialidad.nomesp}"></td>-->
         <td th:text="${alumno.proce}"></td>
         <td>
           <button type="button" class="btn btn-info btnactualizar"
             th:data-idalumno="${alumno.idalumno}"
             th:data-nomalumno="${alumno.nomalumno}"
             th:data-apealumno="${alumno.apealumno}"
-            th:data-idesp="${alumno.especialidad.nomesp}"
+            th:data-idesp="${alumno.especialidad.idesp}"
             th:data-proce="${alumno.proce}">Actualizar</button>
         </td>
         <td>
@@ -60,6 +60,11 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Alumno</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="txtcodigo" class="form-label">Código</label>
+          <input type="text" class="form-control" id="txtcodigo">
+        </div>
       <div class="modal-body">
         <div class="mb-3">
           <label for="txtnombre" class="form-label">Nombre</label>

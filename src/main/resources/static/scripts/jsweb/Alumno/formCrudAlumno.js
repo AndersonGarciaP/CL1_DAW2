@@ -1,8 +1,9 @@
 $(document).on("click", "#btnagregar", function(){
+    $("#txtcodigo").val("");
     $("#txtnombre").val("");
     $("#txtapellido").val("");
     $("#cboespecialidad").empty();
-    $("#txtprocedencia").val("0");
+    $("#txtprocedencia").val("");
     $("#hddidAlumno").val("0");
     $.ajax({
         type: "GET",
@@ -49,7 +50,8 @@ $(document).on("click", "#btnguardar", function(){
         url: "/Alumno/registrarAlumno",
         contentType: "application/json",
         data: JSON.stringify({
-            idalumno: $("#hddidAlumno").val(),
+
+            idalumno: $("#txtcodigo").val(),
             nomalumno: $("#txtnombre").val(),
             apealumno: $("#txtapellido").val(),
             idesp: $("#cboespecialidad").val(),
@@ -96,14 +98,13 @@ function ListarAlumno(){
                     "<td>"+value.idalumno+"</td>"+
                     "<td>"+value.nomalumno+"</td>"+
                     "<td>"+value.apealumno+"</td>"+
-                    // "<td>"+value.idesp+"</td>"+
                     "<td>"+value.proce+"</td>"+
                     "<td>"+
                         "<button type='button' class='btn btn-info btnactualizar'"+
                                      "data-idalumno='"+value.idalumno+"'"+
                                      "data-nomalumno='"+value.nomalumno+"'"+
                                      "data-apealumno='"+value.apealumno+"'"+
-                                     "data-idesp='"+value.idesp+"'"+
+                                     "data-idesp='"+value.idesp +"'"+
                                      "data-proce='"+value.proce+"'>Actualizar</button>"+
                     "</td>"+
                     "<td>"+
