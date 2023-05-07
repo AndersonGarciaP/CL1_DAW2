@@ -6,7 +6,7 @@ $(document).on("click", "#btnagregar", function(){
     $("#hddidAlumno").val("0");
     $.ajax({
         type: "GET",
-        url: "Especialidad/listarEspecialidades",
+        url: "/Especialidad/listarEspecialidades",
         dataType: "json",
         success: function(resultado){
             $.each(resultado, function(index, value){
@@ -96,7 +96,7 @@ function ListarAlumno(){
                     "<td>"+value.idalumno+"</td>"+
                     "<td>"+value.nomalumno+"</td>"+
                     "<td>"+value.apealumno+"</td>"+
-                    "<td>"+value.idesp+"</td>"+
+                    // "<td>"+value.idesp+"</td>"+
                     "<td>"+value.proce+"</td>"+
                     "<td>"+
                         "<button type='button' class='btn btn-info btnactualizar'"+

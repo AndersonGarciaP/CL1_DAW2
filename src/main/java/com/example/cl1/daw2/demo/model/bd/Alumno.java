@@ -13,7 +13,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Alumno {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String idalumno;
     @Column(name = "nomalumno")
     private String nomalumno;

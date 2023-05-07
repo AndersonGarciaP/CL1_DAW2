@@ -37,12 +37,14 @@ public class AlumnoController {
 //            if(alumnoRequest.getIdalumno() > 0){
 //                objAlumno.setIdalumno(alumnoRequest.getIdalumno());
 //            }
+            objAlumno.setIdalumno(alumnoRequest.getIdalumno());
             objAlumno.setNomalumno(alumnoRequest.getNomalumno());
             objAlumno.setApealumno(alumnoRequest.getApealumno());
-            objAlumno.setProce(alumnoRequest.getProce());
             Especialidad objEspecialidad = new Especialidad();
             objEspecialidad.setIdesp(alumnoRequest.getIdesp());
             objAlumno.setEspecialidad(objEspecialidad);
+            objAlumno.setProce(alumnoRequest.getProce());
+
             alumnoService.registrarAlumno(objAlumno);
         }catch (Exception ex){
             mensaje = "Alumno no registrada";

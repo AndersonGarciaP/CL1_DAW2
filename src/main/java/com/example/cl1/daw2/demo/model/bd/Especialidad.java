@@ -17,7 +17,7 @@ import java.util.List;
 public class Especialidad {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String idesp;
 
     @Column(name = "nomesp")
